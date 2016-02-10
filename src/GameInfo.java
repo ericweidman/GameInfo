@@ -1,8 +1,3 @@
-import jodd.json.JsonParser;
-import jodd.json.JsonSerializer;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -16,7 +11,7 @@ public class GameInfo {
     public static void main(String[] args) throws IOException {
 
         try {
-            game = loadGameInfo();
+            game = SaveState.loadGameInfo();
         } catch (Exception e) {
             System.out.println("Sorry, that didn't load!");
             System.out.println("Please add a game!");
@@ -59,31 +54,10 @@ public class GameInfo {
         System.out.println("Would you like to save this game information?[y/n]");
 
         if (scanner.nextLine().equalsIgnoreCase("y")) {
-            saveGameInfo();
+            SaveState.saveGameInfo();
         } else {
             System.out.println("Thanks for nothing!");
         }
-    }
-
-    public static void saveGameInfo() throws IOException {
-        JsonSerializer save = new JsonSerializer();
-        String json = save.serialize(game);
-        File file = new File("gameinfo.json");
-        FileWriter fw = new FileWriter(file);
-        fw.write(json);
-        fw.close();
-        System.out.println("File saved!");
-    }
-
-    public static Game loadGameInfo() throws FileNotFoundException {
-        File file = new File("gameinfo.json");
-        Scanner s = new Scanner(file);
-        s.useDelimiter("\\Z");
-        String contents = s.next();
-
-        JsonParser p = new JsonParser();
-        return p.parse(contents, Game.class);
-
     }
 }
 

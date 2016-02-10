@@ -1,8 +1,5 @@
-
-import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
 import jodd.json.JsonParser;
 import jodd.json.JsonSerializer;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;

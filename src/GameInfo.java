@@ -15,7 +15,6 @@ public class GameInfo {
 
     public static void main(String[] args) throws IOException {
 
-
         try {
             game = loadGameInfo();
         } catch (Exception e) {
@@ -29,7 +28,6 @@ public class GameInfo {
         System.out.println(game.publisher);
 
         System.out.println("Would you like to edit this game? [y/n]");
-
 
         if (scanner.nextLine().equalsIgnoreCase("y")) {
 
@@ -56,7 +54,6 @@ public class GameInfo {
             System.out.println(game.publisher);
 
         }
-
 
         System.out.println("Would you like to save this game information?[y/n]");
 

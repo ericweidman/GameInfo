@@ -19,6 +19,7 @@ public class GameInfo {
             game = loadGameInfo();
         } catch (Exception e) {
             System.out.println("Sorry, that didn't load!");
+            System.out.println("Please add a game!");
         }
 
         System.out.println(game.name);

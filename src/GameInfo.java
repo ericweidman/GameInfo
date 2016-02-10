@@ -61,7 +61,6 @@ public class GameInfo {
             saveGameInfo();
         } else {
             System.out.println("Thanks for nothing!");
-            return;
         }
     }
 
